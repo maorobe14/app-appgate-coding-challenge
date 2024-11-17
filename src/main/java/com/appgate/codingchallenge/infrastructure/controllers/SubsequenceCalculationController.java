@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.ExecutionException;
+
 @RestController
 @RequestMapping("/api/v1")
 public class SubsequenceCalculationController {
@@ -20,7 +22,7 @@ public class SubsequenceCalculationController {
     }
 
     @PostMapping("/subsequence")
-    public ResponseEntity<Integer> createSubsequenceCalculation(@RequestBody InputStrings inputStrings){
-        return new ResponseEntity<Integer>(taskService.CalculateSubsequence(inputStrings), HttpStatus.OK);
+    public ResponseEntity<Integer> createSubsequenceCalculation(@RequestBody InputStrings inputStrings) throws ExecutionException, InterruptedException {
+        return new ResponseEntity<Integer>(taskService.CalculateSubsequence(inputStrings).get(), HttpStatus.OK);
     }
 }

@@ -4,11 +4,13 @@ import com.appgate.codingchallenge.domain.models.InputStrings;
 import com.appgate.codingchallenge.domain.ports.out.DynamicSubsequencesCalculatorPort;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.CompletableFuture;
+
 @Component
 public class DynamicSubsequencesCalculatorAdapter implements DynamicSubsequencesCalculatorPort {
 
      @Override
-    public Integer CalculateSubsequence(InputStrings inputStrings) {
+    public CompletableFuture<Integer> CalculateSubsequence(InputStrings inputStrings) {
 
         String sourceSubsequences = inputStrings.getSourceSubsequences();
         String targetSubsequences = inputStrings.getTargetSubsequences();
@@ -29,7 +31,7 @@ public class DynamicSubsequencesCalculatorAdapter implements DynamicSubsequences
             }
         }
 
-        return Integer.valueOf(subsequencesArray[sourceLengthSubsequences][targetLengthSubsequences]);
+        return CompletableFuture.completedFuture(Integer.valueOf(subsequencesArray[sourceLengthSubsequences][targetLengthSubsequences]));
     }
 
     private int[][] initializeSubsequenceArray(int sourceLengthSubsequences, int targetLengthSubsequences) {

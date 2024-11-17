@@ -2,6 +2,8 @@ package com.appgate.codingchallenge.domain.ports.out;
 
 import com.appgate.codingchallenge.domain.models.InputStrings;
 
+import java.util.concurrent.CompletableFuture;
+
 public interface DynamicSubsequencesCalculatorPort {
-   Integer CalculateSubsequence(InputStrings inputStrings);
+   CompletableFuture<Integer> CalculateSubsequence(InputStrings inputStrings);
 }

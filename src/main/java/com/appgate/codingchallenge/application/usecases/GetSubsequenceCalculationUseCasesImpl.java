@@ -6,6 +6,8 @@ import com.appgate.codingchallenge.domain.ports.out.DynamicSubsequencesCalculato
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service
 public class GetSubsequenceCalculationUseCasesImpl implements GetSubsequenceCalculationUseCases {
 
@@ -15,9 +17,9 @@ public class GetSubsequenceCalculationUseCasesImpl implements GetSubsequenceCalc
         this.dynamicSubsequencesCalculatorPort = dynamicSubsequencesCalculatorPort;
     }
 
-    
+    @Async
     @Override
-    public Integer CalculateSubsequence(InputStrings inputStrings) {
+    public CompletableFuture<Integer> CalculateSubsequence(InputStrings inputStrings) {
         return dynamicSubsequencesCalculatorPort.CalculateSubsequence(inputStrings);
     }
 }
