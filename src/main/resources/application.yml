@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: codingchallenge
+
+server:
+  port: 8087
