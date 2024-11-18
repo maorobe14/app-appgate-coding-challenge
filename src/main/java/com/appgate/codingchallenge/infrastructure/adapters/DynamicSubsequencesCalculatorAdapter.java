@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 public class DynamicSubsequencesCalculatorAdapter implements DynamicSubsequencesCalculatorPort {
 
      @Override
-    public CompletableFuture<Integer> CalculateSubsequence(InputStrings inputStrings) {
+    public CompletableFuture<Integer> calculateSubsequence(InputStrings inputStrings) {
 
         String sourceSubsequences = inputStrings.getSourceSubsequences();
         String targetSubsequences = inputStrings.getTargetSubsequences();

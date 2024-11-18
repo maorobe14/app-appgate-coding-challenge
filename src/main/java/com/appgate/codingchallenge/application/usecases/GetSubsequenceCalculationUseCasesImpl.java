@@ -20,6 +20,6 @@ public class GetSubsequenceCalculationUseCasesImpl implements GetSubsequenceCalc
     @Async
     @Override
     public CompletableFuture<Integer> CalculateSubsequence(InputStrings inputStrings) {
-        return dynamicSubsequencesCalculatorPort.CalculateSubsequence(inputStrings);
+        return dynamicSubsequencesCalculatorPort.calculateSubsequence(inputStrings);
     }
 }
