@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.CompletableFuture;
 
 @Service
-public class TaskService implements GetSubsequenceCalculationUseCases {
+public class SubsequenceCalculationService implements GetSubsequenceCalculationUseCases {
 
     private final GetSubsequenceCalculationUseCases getSubsequenceCalculationUseCases;
 
-    public TaskService(GetSubsequenceCalculationUseCases getSubsequenceCalculationUseCases) {
+    public SubsequenceCalculationService(GetSubsequenceCalculationUseCases getSubsequenceCalculationUseCases) {
         this.getSubsequenceCalculationUseCases = getSubsequenceCalculationUseCases;
     }
 

@@ -1,6 +1,6 @@
 package com.appgate.codingchallenge.infrastructure.controllers;
 
-import com.appgate.codingchallenge.application.services.TaskService;
+import com.appgate.codingchallenge.application.services.SubsequenceCalculationService;
 import com.appgate.codingchallenge.domain.models.InputStrings;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -16,9 +16,9 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api/v1")
 public class SubsequenceCalculationController {
 
-    private final TaskService taskService;
+    private final SubsequenceCalculationService taskService;
 
-    public SubsequenceCalculationController(TaskService taskService) {
+    public SubsequenceCalculationController(SubsequenceCalculationService taskService) {
         this.taskService = taskService;
     }
 
